@@ -795,7 +795,7 @@ class _TypeAheadFieldState<T> extends State<TypeAheadField<T>>
     this._keyboardVisibilitySubscription =
         _keyboardVisibility.listen((bool isVisible) {
       if (widget.hideSuggestionsOnKeyboardHide && !isVisible) {
-        _effectiveFocusNode.unfocus();
+        this._suggestionsBox.close();
       }
     });
 
